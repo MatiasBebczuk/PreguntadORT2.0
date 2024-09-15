@@ -1,0 +1,34 @@
+@{
+    var dificultades = ViewBag.Dificultades as IEnumerable<Dificultades>;
+    var categorias = ViewBag.Categorias as IEnumerable<Categorias>;
+}
+
+@if (dificultades != null && dificultades.Any())
+{
+    <h2>Dificultades</h2>
+    <ul>
+        @foreach (var dificultad in dificultades)
+        {
+            <li>@dificultad.Nombre</li> 
+        }
+    </ul>
+}
+else
+{
+    <p>No se encontraron dificultades.</p>
+}
+
+@if (categorias != null && categorias.Any())
+{
+    <h2>Categorías</h2>
+    <ul>
+        @foreach (var categoria in categorias)
+        {
+            <li>@categoria.Nombre</li> 
+        }
+    </ul>
+}
+else
+{
+    <p>No se encontraron categorías.</p>
+}

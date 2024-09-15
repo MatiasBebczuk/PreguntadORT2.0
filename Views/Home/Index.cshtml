@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="Index">
+    <h1>Bienvenido a PreguntadORT</h1>
+    <div class="Logo">
+        <img src="\Imagenes\pregunta.png" alt="Logo PreguntadORT">
+    </div>
+
+    <!-- Botón para comenzar -->
+    <a href='@Url.Action("InicializarJuego", "Home")' class="btn btn-primary">Comenzar</a>
+    
+    <!-- Botón para tutorial -->
+    <a href='@Url.Action("Tutorial", "Home")' class="btn btn-secondary">Tutorial</a>
+</div>
+
+<style>
+    .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        margin: 10px;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+        color: #fff;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+    }
+
+    .btn-secondary {
+        background-color: #6c757d;
+    }
+
+    .btn-primary:hover, .btn-secondary:hover {
+        opacity: 0.8;
+    }
+</style>
