@@ -26,6 +26,8 @@ body {
   margin-bottom: 60px;
 }
 
+/*Index*/
+
 .Index {
   text-align: center;
   padding: 50px 20px;
@@ -76,3 +78,73 @@ a.btn:active {
   transform: scale(0.98);
 }
 
+/*Creditos*/
+
+.desarrolladores{ 
+  width: 100%;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.tarjetas_dev {
+  width: 90%;
+  display: flex;
+  justify-content: space-around;  
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.card {
+  width: 500px;
+  height: 800px;
+  background-color: #fff;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: 0.7s;
+}
+
+.card img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.info_card {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  background-color: #03a9f4;
+  border: 2px solid #03a9f4;
+  position: absolute;
+  bottom: -50%;
+  padding: 15px;
+  opacity: 0;
+  transition: 0.7s;
+}
+
+.nombre {
+  color: #fff;
+  text-align: center;
+  transition: 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.1);
+}
+
+.card:hover > .info_card {
+  left: 10px;
+  bottom: 10px;
+  opacity: 1;
+}
+
+.info_card:hover {
+  background-color: #fff;
+}
+
+
+.info_card:hover > .nombre {
+  color: #03a9f4;
+}
