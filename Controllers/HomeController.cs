@@ -65,12 +65,12 @@ public class HomeController : Controller
     {
         ViewBag.Categorias = BD.ObtenerCategorias();
         ViewBag.dificultad = BD.ObtenerDificultades();
-        return View("Inicializar Juego");
+        return View("ConfigurarJuego");
     }
         public IActionResult InicializarJuego()
     {
-        ViewBag.Categorias = BD.ObtenerCategorias();
         ViewBag.dificultad = BD.ObtenerDificultades();
+        ViewBag.Categorias = BD.ObtenerCategorias();
         return View("InicializarJuego");
         
     }

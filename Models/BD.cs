@@ -10,27 +10,29 @@ private static string _connectionString = @"Server=localhost\SQLEXPRESS;DataBase
     static List<Dificultades> ListaDificultades = new List<Dificultades>();
     static List<Preguntas> ListaPreguntas = new List<Preguntas>();
     static List<Respuestas> ListaRespuestas= new List<Respuestas>();
+
     public static List<Categorias> ObtenerCategorias()
 {
-    List<Categorias> listaCategorias;
+    
     using (SqlConnection db = new SqlConnection(_connectionString))
     {
         string sql = "SELECT * FROM Categorias";
-        listaCategorias = db.Query<Categorias>(sql).ToList();
+        ListaCategorias = db.Query<Categorias>(sql).ToList();
     }
-    return listaCategorias ?? new List<Categorias>();
+    return ListaCategorias;
 }
 
 public static List<Dificultades> ObtenerDificultades()
-{
-    List<Dificultades> listaDificultades = new List<Dificultades>();
-    using (SqlConnection db = new SqlConnection(_connectionString))
     {
-        string sql = "SELECT * FROM Dificultades";
-        listaDificultades = db.Query<Dificultades>(sql).ToList();
+        using (SqlConnection db = new SqlConnection(_connectionString))
+        {
+            string sql = "SELECT * FROM Dificultades";
+            ListaDificultades = db.Query<Dificultades>(sql).ToList();
+        }
+        return ListaDificultades;
     }
-    return listaDificultades; 
-}
+
+
 
     public static List<Preguntas> ObtenerPreguntas(int idDificultad, int idCategoria){
         if(idDificultad!=-1 && idCategoria!=-1){
