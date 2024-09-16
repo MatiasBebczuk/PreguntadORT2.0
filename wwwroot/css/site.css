@@ -78,6 +78,41 @@ a.btn:active {
   transform: scale(0.98);
 }
 
+
+/*Footer*/
+
+footer {
+  position: fixed;
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  justify-content: center; 
+  align-items: center;
+  height: 57px;
+  bottom: 0;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+footer div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+footer p{
+  font-family: 'Courier New', Courier, monospace;
+  margin: 0;
+  color: #000000;
+  
+}
+
+.footer-texto{
+  color: rgb(32, 28, 28);
+  font-size: 24px;
+}
+
+.container{
+  overflow: hidden;
+}
+
 /*Creditos*/
 
 .desarrolladores{ 
