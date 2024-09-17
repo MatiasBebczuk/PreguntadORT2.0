@@ -10,10 +10,8 @@
     
 <h1> Dificultades </h1>
 
-@foreach(Dificultades dificultades in ViewBag.Dificultades){
-        
-            <div>
-                <p>@dificultades.Nombre</p>
-            </div>
-        
+@{
+    foreach(Dificultades dif in ViewBag.dificultad){
+        <p>@dif.Nombre</p>
     }
+}
