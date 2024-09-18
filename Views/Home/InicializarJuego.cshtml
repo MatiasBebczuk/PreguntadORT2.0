@@ -16,14 +16,12 @@
     </div>
     <div class = contenedor>
             <h1> Dificultades </h1>
-            <section class="buttons_container">
             @{foreach (Dificultades dif in ViewBag.dificultad) {
                 <div class = "radio">
                     <input type="radio" value="@dif.IdDificultad" name="dificultad" id="dificultad_@dif.IdDificultad">
                     <p>@dif.Nombre</p>
                 </div>
             }}
-            </section>
             
             <button type="button" id="randomButton">Seleccionar Aleatorio</button>
     </div> 
