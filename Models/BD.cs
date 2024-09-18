@@ -5,7 +5,8 @@ using Dapper;
 namespace PreguntadORT.Models;
 
 static class BD{
-private static string _connectionString = @"Server=localhost ;DataBase = PreguntadOrt;Trusted_Connection = True;";
+private static string _connectionString = @"Server=localhost\SQLEXPRESS;DataBase = PreguntadOrt;Trusted_Connection = True;";
+
     static List<Categorias> ListaCategorias = new List<Categorias>();
     static List<Dificultades> ListaDificultades = new List<Dificultades>();
     static List<Preguntas> ListaPreguntas = new List<Preguntas>();

@@ -1,17 +1,26 @@
-<h1> Categorias </h1>
+<form action = '@Url.Action("Comenzar", "Home")'>
 
-@foreach(Categorias categorias in ViewBag.Categorias){
-        
+    <h1> Categorias </h1>
+
+    @foreach(Categorias categorias in ViewBag.Categorias){
+            
             <div>
+                <input type="radio" value="@categorias.Nombre" name="categoria" id = "categoria">
                 <p>@categorias.Nombre</p>
             </div>
+            
+    }
         
-    }
-    
-<h1> Dificultades </h1>
+    <h1> Dificultades </h1>
 
-@{
-    foreach(Dificultades dif in ViewBag.dificultad){
-        <p>@dif.Nombre</p>
+    @{foreach(Dificultades dif in ViewBag.dificultad){
+            
+            <div>
+                <input type="radio" value="@dif.Nombre" name="dificultad" id = "dificultad">
+                <p>@dif.Nombre</p>
+            </div>
+        }
     }
-}
+
+    <input type="submit" value="Enviar" class="boton"/>
+</form>
