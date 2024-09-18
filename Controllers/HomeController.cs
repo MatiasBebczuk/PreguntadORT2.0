@@ -20,16 +20,16 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult Comenzar(string Username, int dificultad, int categoria)
+    public IActionResult Comenzar(string Usuario, int dificultad, int categoria)
     {
-        Juego.CargarPartida(Username, dificultad, categoria);
+        Juego.CargarPartida(Usuario, dificultad, categoria);
         return RedirectToAction("Jugar");
     }
-    public IActionResult Jugar(string Username, int dificultad, int categoria)
-{
-    Juego.CargarPartida(Username, dificultad, categoria);
-    
-    Preguntas PreguntaElegida = Juego.ObtenerProximaPregunta();
+    public IActionResult Jugar()
+    {    
+    Preguntas? PreguntaElegida = Juego.ObtenerProximaPregunta();
+
+    ViewBag.Username = Juego.Username;
     
     if (PreguntaElegida == null)
     {
@@ -41,7 +41,7 @@ public class HomeController : Controller
         ViewBag.ListaRespuestas = Juego.ObtenerProximasRespuestas(PreguntaElegida.IdPregunta);
         ViewBag.Usuario = Juego.Username; 
         ViewBag.PuntajeActual = Juego.puntajeActual;
-        return View("Comenzar");
+        return View("Jugar");
     }
 }
 
@@ -49,6 +49,7 @@ public class HomeController : Controller
     [HttpPost] 
 
      public IActionResult VerificarRespuesta(int idRespuesta){
+        
         if(Juego.VerificarRespuesta(idRespuesta)){
             ViewBag.Mensaje="CORRECTO";
         }

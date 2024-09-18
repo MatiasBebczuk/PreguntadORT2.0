@@ -1,16 +1,15 @@
 using PreguntadORT.Models;
 
 static class Juego{
-    public static string Username;
+    public static string? Username;
     public static int puntajeActual;
     private static int contadorPreguntaActual;
     private static int cantidadPreguntasCorrectas;
-    private static List<Preguntas> Preguntas;
-    private static List<Respuestas> preguntasxRespuesta;
+    private static List<Preguntas> Preguntas = new();
+    private static List<Respuestas> preguntasxRespuesta = new();
     private static int preguntaElegida;
 
     public static void InicializarJuego(){
-        Username = Username;
         puntajeActual=0;
         cantidadPreguntasCorrectas=0;
         contadorPreguntaActual=0;
@@ -21,12 +20,12 @@ static class Juego{
     public static List<Dificultades> ObtenerDificultades(){
         return BD.ObtenerDificultades();
     }
-    public static void CargarPartida(string Username, int dificultad, int categoria){
+    public static void CargarPartida(string Usuario, int dificultad, int categoria){
         InicializarJuego();
-        Username=Username;
+        Username=Usuario;
         Preguntas=BD.ObtenerPreguntas(dificultad, categoria);
     }
-    public static Preguntas ObtenerProximaPregunta(){
+    public static Preguntas? ObtenerProximaPregunta(){
         if(Preguntas.Count!=0){
             return Preguntas[preguntaElegida];
         }
