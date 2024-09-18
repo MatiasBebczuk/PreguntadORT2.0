@@ -10,7 +10,7 @@ static class Juego{
     private static int preguntaElegida;
 
     public static void InicializarJuego(){
-        Username = null;
+        Username = Username;
         puntajeActual=0;
         cantidadPreguntasCorrectas=0;
         contadorPreguntaActual=0;

@@ -5,7 +5,7 @@ using Dapper;
 namespace PreguntadORT.Models;
 
 static class BD{
-private static string _connectionString = @"Server=localhost\SQLEXPRESS;DataBase = PreguntadOrt;Trusted_Connection = True;";
+private static string _connectionString = @"Server=localhost;DataBase = PreguntadOrt;Trusted_Connection = True;";
 
     static List<Categorias> ListaCategorias = new List<Categorias>();
     static List<Dificultades> ListaDificultades = new List<Dificultades>();
@@ -13,16 +13,16 @@ private static string _connectionString = @"Server=localhost\SQLEXPRESS;DataBase
     static List<Respuestas> ListaRespuestas= new List<Respuestas>();
 
     public static List<Categorias> ObtenerCategorias()
-{
+    {
     using (SqlConnection db = new SqlConnection(_connectionString))
     {
         string sql = "SELECT * FROM Categorias";
         ListaCategorias = db.Query<Categorias>(sql).ToList();
     }
     return ListaCategorias;
-}
+    }
 
-public static List<Dificultades> ObtenerDificultades()
+    public static List<Dificultades> ObtenerDificultades()
     {
         using (SqlConnection db = new SqlConnection(_connectionString))
         {
@@ -31,9 +31,6 @@ public static List<Dificultades> ObtenerDificultades()
         }
         return ListaDificultades;
     }
-
-
-
     public static List<Preguntas> ObtenerPreguntas(int idDificultad, int idCategoria){
         if(idDificultad!=-1 && idCategoria!=-1){
             using(SqlConnection db = new SqlConnection(_connectionString)){
