@@ -2,46 +2,51 @@
     ViewData["Title"] = "InicializarJuego";
 }
 
-<form action='@Url.Action("Comenzar", "Home")' id="gameForm">
-    <h1> Categorias </h1>
+<div class = contenedor>
+    <form action='@Url.Action("Comenzar", "Home")' id="gameForm">
+        <h1> Categorias </h1>
 
-    @{foreach (Categorias categorias in ViewBag.Categorias) {
+        @{foreach (Categorias categorias in ViewBag.Categorias) {
+            <div class = "radio">
+                <input type="radio" value="@categorias.IdCategoria" name="categoria" id="categoria_@categorias.IdCategoria">
+                <p>@categorias.Nombre</p>
+            </div>
+        }}
+</div>
+<div class = contenedor>
+        <h1> Dificultades </h1>
+        <section class="buttons_container">
+        @{foreach (Dificultades dif in ViewBag.dificultad) {
+            <div class = "radio">
+                <input type="radio" value="@dif.IdDificultad" name="dificultad" id="dificultad_@dif.IdDificultad">
+                <p>@dif.Nombre</p>
+            </div>
+        }}
+        </section>
+           
+        <button type="button" id="randomButton">Seleccionar Aleatorio</button>
+</div> 
+<div class = contenedor>
+        <h1> Usuario </h1>
+
         <div>
-            <input type="radio" value="@categorias.IdCategoria" name="categoria" id="categoria_@categorias.IdCategoria">
-            <p>@categorias.Nombre</p>
+            <input type="text" name="Username" id="Username">
         </div>
-    }}
+</div> 
+<div class = botonero>
+        <input type="submit" value="Enviar" class="boton"/>
+</div> 
+    </form>
 
-    <h1> Dificultades </h1>
+    <script>
+        document.getElementById('randomButton').addEventListener('click', function() {
 
-    @{foreach (Dificultades dif in ViewBag.dificultad) {
-        <div>
-            <input type="radio" value="@dif.IdDificultad" name="dificultad" id="dificultad_@dif.IdDificultad">
-            <p>@dif.Nombre</p>
-        </div>
-    }}
-        
-    <button type="button" id="randomButton">Seleccionar Aleatorio</button>
+            const categorias = document.getElementsByName('categoria');
+            const randomCategoria = Math.floor(Math.random() * categorias.length);
+            categorias[randomCategoria].checked = true;
 
-
-    <h1> Usuario </h1>
-
-    <div>
-        <input type="text" name="Username" id="Username">
-    </div>
-
-    <input type="submit" value="Enviar" class="boton"/>
-</form>
-
-<script>
-    document.getElementById('randomButton').addEventListener('click', function() {
-
-        const categorias = document.getElementsByName('categoria');
-        const randomCategoria = Math.floor(Math.random() * categorias.length);
-        categorias[randomCategoria].checked = true;
-
-        const dificultades = document.getElementsByName('dificultad');
-        const randomDificultad = Math.floor(Math.random() * dificultades.length);
-        dificultades[randomDificultad].checked = true;
-    });
-</script>
+            const dificultades = document.getElementsByName('dificultad');
+            const randomDificultad = Math.floor(Math.random() * dificultades.length);
+            dificultades[randomDificultad].checked = true;
+        });
+    </script>

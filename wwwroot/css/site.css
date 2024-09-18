@@ -183,3 +183,157 @@ footer p{
 .info_card:hover > .nombre {
   color: #03a9f4;
 }
+
+/*Inicializar juego
+
+.contenedor{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 5%;
+  background-color:white;
+  border-radius: 50px;
+}
+
+.buttons_container {
+  width: 100%;
+  height: 500px;
+  border: 1px solid #000;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.contenedor h1 {
+  width: 100%;
+  text-align: center;
+}
+
+.botonero{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.boton {
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #fff;
+  background-color: #03a9f4;
+  border: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.boton:hover {
+  background-color: #0288d1;
+  transform: translateY(-2px);
+  
+}
+
+.boton:active {
+  transform: translateY(0);
+}
+
+.radio{
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 8%;
+  background-color:blue;
+  border-radius: 50px;
+  border: 1px solid #000;
+}
+*/
+
+.contenedor {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.radio {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.radio input[type="radio"] {
+  margin-right: 10px;
+}
+
+.radio p{
+  height: 10px;
+}
+
+.buttons_container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#randomButton {
+  background-color: #0288d1;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#randomButton:hover {
+  background-color: #0056b3;
+}
+
+#Username {
+  width: calc(100% - 10px);
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.botonero{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.boton {
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #fff;
+  background-color: #03a9f4;
+  border: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.boton:hover {
+  background-color: #0288d1;
+  transform: translateY(-2px);
+  
+}
+
+.boton:active {
+  transform: translateY(0);
+}
