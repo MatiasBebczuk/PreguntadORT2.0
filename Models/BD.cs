@@ -31,30 +31,25 @@ private static string _connectionString = @"Server=localhost;DataBase = Pregunta
         return ListaDificultades;
     }
     public static List<Preguntas> ObtenerPreguntas(int idDificultad, int idCategoria){
-        if(idDificultad!=-1 && idCategoria!=-1){
-            using(SqlConnection db = new SqlConnection(_connectionString)){
-            string sql= "SELECT * FROM Preguntas where IdCategoria=@pIdCategoria and IdDificultad=@pIdDificultad";
-            ListaPreguntas = db.Query<Preguntas>(sql, new{pIdCategoria=idCategoria, pIdDificultad=idDificultad}).ToList();
+        using(SqlConnection db = new SqlConnection(_connectionString)){
+            if(idDificultad!=-1 && idCategoria!=-1){
+                string sql= "SELECT * FROM Preguntas where IdCategoria=@pIdCategoria and IdDificultad=@pIdDificultad";
+                ListaPreguntas = db.Query<Preguntas>(sql, new{pIdCategoria=idCategoria, pIdDificultad=idDificultad}).ToList();
+            }
+            else if(idDificultad==-1 && idCategoria!=-1){
+                string sql= "SELECT * FROM Preguntas where IdCategoria=@pIdCategoria";
+                ListaPreguntas = db.Query<Preguntas>(sql, new{pIdCategoria=idCategoria, pIdDificultad=idDificultad}).ToList();
+            }
+            else if(idCategoria==-1 && idDificultad!=-1){
+                string sql= "SELECT * FROM Preguntas where IdDificultad=@pIdDificultad";
+                ListaPreguntas = db.Query<Preguntas>(sql, new{pIdCategoria=idCategoria, pIdDificultad=idDificultad}).ToList();
+            }
+            else{
+                string sql= "SELECT * FROM Preguntas";
+                ListaPreguntas = db.Query<Preguntas>(sql).ToList();
             }
         }
-        else if(idDificultad==-1 && idCategoria!=-1){
-            using(SqlConnection db = new SqlConnection(_connectionString)){
-            string sql= "SELECT * FROM Preguntas where IdCategoria=@pIdCategoria";
-            ListaPreguntas = db.Query<Preguntas>(sql, new{pIdCategoria=idCategoria, pIdDificultad=idDificultad}).ToList();
-            }
-        }
-        else if(idCategoria==-1 && idDificultad!=-1){
-            using(SqlConnection db = new SqlConnection(_connectionString)){
-            string sql= "SELECT * FROM Preguntas where IdDificultad=@pIdDificultad";
-            ListaPreguntas = db.Query<Preguntas>(sql, new{pIdCategoria=idCategoria, pIdDificultad=idDificultad}).ToList();
-            }
-        }
-        else{
-            using(SqlConnection db = new SqlConnection(_connectionString)){
-            string sql= "SELECT * FROM Preguntas";
-            ListaPreguntas = db.Query<Preguntas>(sql).ToList();
-            }
-        }
+        
         return ListaPreguntas;
     }
     public static List<Respuestas> ObtenerRespuestas(int idPregunta){
