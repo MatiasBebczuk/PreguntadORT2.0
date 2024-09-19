@@ -1,24 +1,5 @@
  <div class="info_user">
-        <p>Username: @ViewBag.username</p>
+        <p>Username: @ViewBag.Usuario</p>
         <p>Puntaje: @ViewBag.PuntajeActual</p>
     </div>
 
-
-    <form action='@Url.Action("VerificarRespuesta","Home")' method="post" class="pregunta">
-        <div class="enunciado">
-            <p>@ViewBag.PreguntaElegida.Enunciado</p>
-        </div>
-        <div class="input_container_res">
-        @{
-            foreach (Respuestas res in ViewBag.respuestas)
-            {
-                string Class = "res_option_" + res.Correcta.ToString();
-                string Id = "res_" + res.idRespuesta;
-                <div class="@Class">
-                    <input name="categoria" required id="@Id" type="radio" value="@res.idRespuesta">
-                </div>
-            }
-        }
-        </div>
-        <input type="submit" value="Verificar" class="jugar">
-    </form>

@@ -1,7 +1,7 @@
 using PreguntadORT.Models;
 
 static class Juego{
-    public static string? Usuario;
+    public static string Usuario;
     public static int puntajeActual;
     private static int contadorPreguntaActual;
     private static int cantidadPreguntasCorrectas;
