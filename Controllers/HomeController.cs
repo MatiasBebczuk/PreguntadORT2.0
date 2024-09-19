@@ -29,11 +29,11 @@ public class HomeController : Controller
     {    
     Preguntas? PreguntaElegida = Juego.ObtenerProximaPregunta();
 
-    ViewBag.Username = Juego.Username;
+    ViewBag.Username = Juego.Usuario;
     
     if (PreguntaElegida == null)
     {
-        ViewBag.Username = Juego.Username; 
+        ViewBag.Username = Juego.Usuario; 
         ViewBag.PuntajeActual = Juego.puntajeActual;
         return View("Fin");
     }
@@ -41,7 +41,7 @@ public class HomeController : Controller
     {
         ViewBag.PreguntaElegida = PreguntaElegida;
         ViewBag.ListaRespuestas = Juego.ObtenerProximasRespuestas(PreguntaElegida.IdPregunta);
-        ViewBag.Username = Juego.Username; 
+        ViewBag.Username = Juego.Usuario; 
         ViewBag.PuntajeActual = Juego.puntajeActual;
         return View("Jugar");
     }

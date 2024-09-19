@@ -1,7 +1,7 @@
 using PreguntadORT.Models;
 
 static class Juego{
-    public static string? Username;
+    public static string? Usuario;
     public static int puntajeActual;
     private static int contadorPreguntaActual;
     private static int cantidadPreguntasCorrectas;
@@ -22,7 +22,7 @@ static class Juego{
     }
     public static void CargarPartida(string Usuario, int dificultad, int categoria){
         InicializarJuego();
-        Username=Usuario;
+        //falta guardar en juego el usuario
 
         Preguntas = BD.ObtenerPreguntas(dificultad, categoria);
     }
