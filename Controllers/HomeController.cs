@@ -22,6 +22,8 @@ public class HomeController : Controller
 
     public IActionResult Comenzar(string Usuario, int dificultad, int categoria)
     {
+        Juego.Usuario = Usuario;
+        ViewBag.usuario = Usuario;
         Juego.CargarPartida(Usuario, dificultad, categoria);
         return RedirectToAction("Jugar");
     }
