@@ -3,8 +3,8 @@ using PreguntadORT.Models;
 static class Juego{
     public static string Usuario;
     public static int puntajeActual;
-    private static int contadorPreguntaActual;
-    private static int cantidadPreguntasCorrectas;
+    public static int contadorPreguntaActual;
+    public static int cantidadPreguntasCorrectas;
     private static List<Preguntas> Preguntas = new();
     private static List<Respuestas> preguntasxRespuesta = new();
     private static int preguntaElegida;
@@ -28,6 +28,7 @@ static class Juego{
     }
     public static Preguntas? ObtenerProximaPregunta(){
         if(Preguntas.Count!=0){
+            contadorPreguntaActual++;
             return Preguntas[preguntaElegida];
         }
         else{

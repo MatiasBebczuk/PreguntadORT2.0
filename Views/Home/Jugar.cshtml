@@ -1,5 +1,18 @@
  <div class="info_user">
-        <p>Username: @ViewBag.Usuario</p>
-        <p>Puntaje: @ViewBag.PuntajeActual</p>
-    </div>
+    <p>Username: @ViewBag.Usuario</p>
+    <p>Puntaje: @ViewBag.PuntajeActual</p>
+</div>
 
+<div class="enunciado">
+    <p>Pregunta @ViewBag.contadorPreguntaActual @ViewBag.PreguntaElegida.Enunciado</p>
+</div>
+
+<form action='@Url.Action("VerificarRespuesta","Home")' method="post" class="pregunta">
+        
+    <div class="input_container_res">
+    @{
+        
+    }
+    </div>
+    <input type="submit" value="Verificar" class="jugar">
+</form>
