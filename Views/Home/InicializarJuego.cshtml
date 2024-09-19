@@ -5,34 +5,36 @@
 
 <form action='@Url.Action("Comenzar", "Home")' id="gameForm">
     <div class = contenedor>        
-            <h1> Categorias </h1>
+        <h1> Categorias </h1>
 
-            @{foreach (Categorias categorias in ViewBag.Categorias) {
-                <div class = "radio">
-                    <input type="radio" value="@categorias.IdCategoria" name="categoria" id="categoria_@categorias.IdCategoria">
-                    <p>@categorias.Nombre</p>
-                </div>
-            }}
+        @{foreach (Categorias categorias in ViewBag.Categorias) {
+            <div class = "radio">
+                <input type="radio" value="@categorias.IdCategoria" name="categoria" id="categoria_@categorias.IdCategoria">
+                <p>@categorias.Nombre</p>
+            </div>
+        }}
     </div>
     <div class = contenedor>
-            <h1> Dificultades </h1>
-            @{foreach (Dificultades dif in ViewBag.dificultad) {
-                <div class = "radio">
-                    <input type="radio" value="@dif.IdDificultad" name="dificultad" id="dificultad_@dif.IdDificultad">
-                    <p>@dif.Nombre</p>
-                </div>
-            }}
+        <h1> Dificultades </h1>
+        @{foreach (Dificultades dif in ViewBag.dificultad) {
+            <div class = "radio">
+                <input type="radio" value="@dif.IdDificultad" name="dificultad" id="dificultad_@dif.IdDificultad">
+                <p>@dif.Nombre</p>
+            </div>
+        }}
             
-            <button type="button" id="randomButton">Seleccionar Aleatorio</button>
+        <button type="button" id="randomButton">Seleccionar Aleatorio</button>
     </div> 
     <div class = contenedor>
-            <h1> Usuario </h1>
-
-    <div>
-        <input type="text" name="Username" id="Username">
+        <h1> Usuario </h1>
+        <div>
+            <input type="text" name="Username" id="Username">
+        </div>
+    </div>
+    <div class = botonero>
+        <input type="submit" value="Enviar" class="boton"/>
     </div>
 
-    <input type="submit" value="Enviar" class="boton"/>
 </form>
 
         <script>

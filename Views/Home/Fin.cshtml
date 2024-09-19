@@ -1,1 +1,18 @@
-<p>fin</p>
+@{
+    ViewData["Title"] = "Fin";
+}
+
+    <div class="fondo">
+        <h1>Fin del juego</h1>
+        
+        <div class="result">
+            <p>Nombre de usuario: @ViewBag.Username</p>
+            <p>Puntaje final: @ViewBag.PuntajeActual</p>
+        </div>
+        
+        <div class="restart">
+            <a href="@Url.Action("InicializarJuego", "Home")" class="button">Volver a jugar</a>
+        </div>
+    </div>
+
+<!--Falta corregir el porque no se ve el nombre de usuario y el porque cuando dot a volver a jugar y siguiente se rompe (lo ultimo a chequear).-->

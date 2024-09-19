@@ -33,13 +33,15 @@ public class HomeController : Controller
     
     if (PreguntaElegida == null)
     {
+        ViewBag.Username = Juego.Username; 
+        ViewBag.PuntajeActual = Juego.puntajeActual;
         return View("Fin");
     }
     else
     {
         ViewBag.PreguntaElegida = PreguntaElegida;
         ViewBag.ListaRespuestas = Juego.ObtenerProximasRespuestas(PreguntaElegida.IdPregunta);
-        ViewBag.Usuario = Juego.Username; 
+        ViewBag.Username = Juego.Username; 
         ViewBag.PuntajeActual = Juego.puntajeActual;
         return View("Jugar");
     }
