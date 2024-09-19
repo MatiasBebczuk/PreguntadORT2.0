@@ -56,10 +56,10 @@ public class HomeController : Controller
      public IActionResult VerificarRespuesta(int idRespuesta){
         
         if(Juego.VerificarRespuesta(idRespuesta)){
-            ViewBag.Mensaje="CORRECTO";
+            ViewBag.Mensaje="verificado.png";
         }
         else{
-            ViewBag.Mensaje="INCORRECTO";
+            ViewBag.Mensaje="incorrecto.png";
         }
         return View("Respuesta");
      }
