@@ -30,6 +30,7 @@ public class HomeController : Controller
     public IActionResult Jugar()
     {    
     Preguntas? PreguntaElegida = Juego.ObtenerProximaPregunta();
+    List<Respuestas> respuestas = Juego.ObtenerProximasRespuestas(PreguntaElegida.IdPregunta);
 
     ViewBag.Usuario = Juego.Usuario;
     
@@ -43,7 +44,10 @@ public class HomeController : Controller
     {
         ViewBag.contadorPreguntaActual = Juego.contadorPreguntaActual;
         ViewBag.PreguntaElegida = PreguntaElegida;
-        ViewBag.ListaRespuestas = Juego.ObtenerProximasRespuestas(PreguntaElegida.IdPregunta);
+        
+        Random rnd = new Random();
+        List<Respuestas> respDesord = respuestas.OrderBy(x => rnd.Next()).ToList();
+        ViewBag.ListaRespuestas= respDesord;
         ViewBag.Usuario = Juego.Usuario; 
         ViewBag.PuntajeActual = Juego.puntajeActual;
         return View("Jugar");
