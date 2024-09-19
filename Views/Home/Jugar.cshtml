@@ -10,9 +10,11 @@
 <form action='@Url.Action("VerificarRespuesta","Home")' method="post" class="pregunta">
         
     <div class="input_container_res">
-    @{
-        
+    @foreach(var respuesta in ViewBag.ListaRespuestas){
+        <input id="@respuesta.idRespuesta" type="radio" name="idRespuesta" value="@respuesta.idRespuesta">
+        <label for="@respuesta.idRespuesta">@respuesta.Contenido</label>
     }
     </div>
     <input type="submit" value="Verificar" class="jugar">
 </form>
+
