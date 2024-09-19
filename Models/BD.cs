@@ -4,7 +4,7 @@ using Dapper;
 namespace PreguntadORT.Models;
 
 static class BD{
-private static string _connectionString = @"Server=localhost\SQLEXPRESS;DataBase = PreguntadOrt;Trusted_Connection = True;";
+private static string _connectionString = @"Server=localhost;DataBase = PreguntadOrt;Trusted_Connection = True;";
 
     static List<Categorias> ListaCategorias = new List<Categorias>();
     static List<Dificultades> ListaDificultades = new List<Dificultades>();
@@ -31,6 +31,7 @@ private static string _connectionString = @"Server=localhost\SQLEXPRESS;DataBase
         return ListaDificultades;
     }
     public static List<Preguntas> ObtenerPreguntas(int idDificultad, int idCategoria){
+
         using(SqlConnection db = new SqlConnection(_connectionString)){
             if(idDificultad!=-1 && idCategoria!=-1){
                 string sql= "SELECT * FROM Preguntas where IdCategoria=@pIdCategoria and IdDificultad=@pIdDificultad";
@@ -40,7 +41,7 @@ private static string _connectionString = @"Server=localhost\SQLEXPRESS;DataBase
                 string sql= "SELECT * FROM Preguntas where IdCategoria=@pIdCategoria";
                 ListaPreguntas = db.Query<Preguntas>(sql, new{pIdCategoria=idCategoria, pIdDificultad=idDificultad}).ToList();
             }
-            else if(idCategoria==-1 && idDificultad!=-1){
+            else if(idDificultad!=-1 && idCategoria==-1){
                 string sql= "SELECT * FROM Preguntas where IdDificultad=@pIdDificultad";
                 ListaPreguntas = db.Query<Preguntas>(sql, new{pIdCategoria=idCategoria, pIdDificultad=idDificultad}).ToList();
             }

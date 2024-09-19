@@ -23,7 +23,8 @@ static class Juego{
     public static void CargarPartida(string Usuario, int dificultad, int categoria){
         InicializarJuego();
         Username=Usuario;
-        Preguntas=BD.ObtenerPreguntas(dificultad, categoria);
+
+        Preguntas = BD.ObtenerPreguntas(dificultad, categoria);
     }
     public static Preguntas? ObtenerProximaPregunta(){
         if(Preguntas.Count!=0){

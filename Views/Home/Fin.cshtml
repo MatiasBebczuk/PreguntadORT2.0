@@ -6,12 +6,12 @@
         <h1>Fin del juego</h1>
         
         <div class="result">
-            <p>Nombre de usuario: @ViewBag.Username</p>
+            <p>Nombre de usuario: @ViewBag.Usuario</p>
             <p>Puntaje final: @ViewBag.PuntajeActual</p>
         </div>
         
         <div class="restart">
-            <a href="@Url.Action("InicializarJuego", "Home")" class="button">Volver a jugar</a>
+            <a href='@Url.Action("InicializarJuego", "Home")' class="button">Volver a jugar</a>
         </div>
     </div>
 
