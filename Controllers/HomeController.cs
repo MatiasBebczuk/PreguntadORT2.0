@@ -48,7 +48,7 @@ public class HomeController : Controller
         ViewBag.PuntajeActual = Juego.puntajeActual;
         return View("Jugar");
     }
-}
+    }
 
 
     [HttpPost] 

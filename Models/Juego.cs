@@ -7,7 +7,7 @@ static class Juego{
     public static int cantidadPreguntasCorrectas;
     private static List<Preguntas> Preguntas = new();
     private static List<Respuestas> preguntasxRespuesta = new();
-    private static int preguntaElegida;
+    public static int preguntaElegida;
 
     public static void InicializarJuego(){
         puntajeActual=0;
