@@ -4,7 +4,7 @@
 
 
 <form action='@Url.Action("Comenzar", "Home")' id="gameForm">
-    <div class = contenedor>        
+    <div class = "contenedor">        
         <h1> Categorias </h1>
 
         @{foreach (Categorias categorias in ViewBag.Categorias) {
@@ -14,7 +14,7 @@
             </div>
         }}
     </div>
-    <div class = contenedor>
+    <div class = "contenedor">
         <h1> Dificultades </h1>
         @{foreach (Dificultades dif in ViewBag.dificultad) {
             <div class = "radio">
@@ -25,13 +25,13 @@
             
         <button type="button" id="randomButton">Seleccionar Aleatorio</button>
     </div> 
-    <div class = contenedor>
+    <div class = "contenedor">
         <h1> Usuario </h1>
         <div>
             <input type="text" name="Usuario" id="Usuario">
         </div>
     </div>
-    <div class = botonero>
+    <div class = "botonero">
         <input type="submit" value="Enviar" class="boton"/>
     </div>
 

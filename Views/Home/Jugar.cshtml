@@ -4,15 +4,17 @@
 </div>
 
 <div class="enunciado">
-    <p>Pregunta @ViewBag.contadorPreguntaActual @ViewBag.PreguntaElegida.Enunciado</p>
+    <h1>Pregunta @ViewBag.contadorPreguntaActual @ViewBag.PreguntaElegida.Enunciado</h1>
 </div>
 
 <form action='@Url.Action("VerificarRespuesta","Home")' method="post" class="pregunta">
         
     <div class="input_container_res">
     @foreach(var respuesta in ViewBag.ListaRespuestas){
+        <div class ="respuestas">
         <input id="@respuesta.idRespuesta" type="radio" name="idRespuesta" value="@respuesta.idRespuesta">
         <label for="@respuesta.idRespuesta">@respuesta.Contenido</label>
+        </div>
     }
     </div>
     <input type="submit" value="Verificar" class="jugar">
