@@ -118,8 +118,6 @@ footer p{
 .contenedor{
   Display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .desarrolladores{ 
