@@ -22,7 +22,6 @@ static class Juego{
     }
     public static void CargarPartida(string Usuario, int dificultad, int categoria){
         InicializarJuego();
-        //falta guardar en juego el usuario
 
         Preguntas = BD.ObtenerPreguntas(dificultad, categoria);
     }
